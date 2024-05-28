@@ -63,5 +63,3 @@ jobs:
             cd ./hollo
             chmod +x run.sh
             ./run.sh
-            nc -z ${{ secrets.LIGHTSAIL_PUBLIC_IP }} 8080
-            sleep 10
