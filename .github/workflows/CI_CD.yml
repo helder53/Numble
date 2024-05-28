@@ -13,9 +13,8 @@ env:
   AWS_REGION: ap-northeast-2
 
 jobs:
-  deployment:
+  test:
     runs-on: ubuntu-latest
-  
     steps:
       - uses: actions/checkout@v4
 
@@ -32,7 +31,28 @@ jobs:
         uses: gradle/gradle-build-action@v3
 
       - name: Build with Gradle
-        run: ./gradlew build -x test
+        run: ./gradlew clean build -x test
+
+  deployment:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 18
+        uses: actions/setup-java@v4
+        with:
+          java-version: '18'
+          distribution: 'temurin'
+      
+      - name: Permission for gradlew
+        run: chmod +x gradlew
+      
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v3
+
+      - name: Build with Gradle
+        run: ./gradlew clean build -x test
       
       - name: AWS 인증
         uses: aws-actions/configure-aws-credentials@v4
@@ -60,5 +80,5 @@ jobs:
           script_stop: true
           script: |
             cd ./hollo
-            chmod +x run.sh
-            ./run.sh
+            export $(grep -v '^#' .env | xargs)
+            java -jar hollo-0.0.1-SNAPSHOT.jar
