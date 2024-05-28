@@ -80,5 +80,5 @@ jobs:
           script_stop: true
           script: |
             cd ./hollo
-            export $(grep -v '^#' .env | xargs)
-            java -jar hollo-0.0.1-SNAPSHOT.jar
+            chmod +x run.sh
+            ./run.sh
