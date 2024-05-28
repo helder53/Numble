@@ -60,4 +60,5 @@ jobs:
           script_stop: true
           script: |
             cd ./hollo
-            ls
+            chmod +x run.sh
+            ./run.sh
