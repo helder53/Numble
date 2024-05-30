@@ -16,7 +16,9 @@ Numble에서 제공한 사이드 프로젝트 가이드라인을 수행한 내�
 - Server : AWS LIGHTSAIL
 - Database : AWS RDS
 - Langauge : JAVA
+
 <br>
+
 - 간단한 API로 구성되어 있기 때문에 EC2보다 Aws Lightsail를 통해 가벼운 서버를 만들었습니다.
 - Lightsail에 Database 기능이 있지만, 범용성을 위해 RDS를 사용하였습니다.
 
