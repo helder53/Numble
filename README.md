@@ -50,7 +50,7 @@ Numble에서 제공한 사이드 프로젝트 가이드라인을 수행한 내�
 ## 📌 API 명세서
 ---
 가이드라인에서 제시된 Method와 Param을 활용해 만든 API들은 PostMan을 이용해 명세서로 만들었습니다.
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)POSTMAN : <https://documenter.getpostman.com/view/25368623/2sA3JKehmR>
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white) : <https://documenter.getpostman.com/view/25368623/2sA3JKehmR>
 
 ## 참고자료
 ---
